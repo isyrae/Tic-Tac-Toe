@@ -1,0 +1,236 @@
+/*
+  ╔══════════════════════════════════════════════════╗
+  ║   Tic-Tac-Toe Multiplayer Game                   ║
+  ║   Author: Rahul Mondal                           ║
+  ║   Telegram: https://t.me/isyrae                  ║
+  ╚══════════════════════════════════════════════════╝
+*/
+
+*{
+    margin: 0;
+    padding: 0;    
+    font-family: 'Press Start 2P', cursive;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+body {
+    background-color: #242067;
+    color: #aad8f6;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 25px;
+    animation: fadeIn 1.5s ease-in forwards;
+    opacity: 0;
+    background-image: url('assets/cloud3.png'), url('assets/cloud1'), url('assets/cloud2.png'), url('assets/cloud3.png'),url('assets/cloud2.png');
+    background-position: calc(100% - 20px)  calc(3%),  calc(50% + 100px) 5%, 5% 25%, calc(15%)  calc(12%), calc(80%) 100px;
+    background-size: 210px auto, 340px auto, 120px auto, 210px auto, 110px auto;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+h1 {
+    font-size: 2.5rem;
+    color: #ffcc00;
+    margin-bottom: 18px;
+    padding: 19px;
+    letter-spacing: 4px;
+    text-shadow: 0 0 0.05rem #ffcc00, 0 0 0.3rem #ffcc00;
+}
+
+/*
+  ╔══════════════════════════════════════════════════╗
+  ║   Tic-Tac-Toe Multiplayer Game                   ║
+  ║   Author: Rahul Mondal                           ║
+  ║   Telegram: https://t.me/isyrae                  ║
+  ╚══════════════════════════════════════════════════╝
+*/
+
+#start, #newgame-button {
+    padding: 1rem;
+    font-size: 1.2rem;
+    background-color: #ffcc00;
+    color: #1e1b3a;
+    border-radius: 13px;
+    border: none;
+    box-shadow: 0 0 0.6rem #ffcc00;
+    height: auto;
+    width: auto;
+    margin: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.game-container{
+    height: vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game{
+    height: 55vmin;
+    width: 62vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5.7vmin;
+}
+
+/*
+  ╔══════════════════════════════════════════════════╗
+  ║   Tic-Tac-Toe Multiplayer Game                   ║
+  ║   Author: Rahul Mondal                           ║
+  ║   Telegram: https://t.me/isyrae                  ║
+  ╚══════════════════════════════════════════════════╝
+*/
+
+.box {
+    height: 13vmin;
+    width: 13vmin;
+    background-color: #ffcc00;
+    color: #1c1b2e;
+    border: none;
+    box-shadow: 0 0 1rem #fff18f;
+    border-radius: 12px;
+    font-size: 6.4vmin;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+#message {
+    color: #00ffcc;
+    font-size: 2.3rem;
+    font-weight: bold;
+    text-shadow: 0 0 0.3rem #00ffcc;
+    margin-top: 8px;
+}
+.message-container{
+    height: 50vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#first {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    padding: 20px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 0.3rem #aaf6ed;
+}
+.hide {
+    display: none;
+}
+
+/*
+  ╔══════════════════════════════════════════════════╗
+  ║   Tic-Tac-Toe Multiplayer Game                   ║
+  ║   Author: Rahul Mondal                           ║
+  ║   Telegram: https://t.me/isyrae                  ║
+  ╚══════════════════════════════════════════════════╝
+*/
+
+#start:hover, #newgame-button:hover {
+    background-color: #44388a;
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+}
+.box:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*
+  ╔══════════════════════════════════════════════════╗
+  ║   Tic-Tac-Toe Multiplayer Game                   ║
+  ║   Author: Rahul Mondal                           ║
+  ║   Telegram: https://t.me/isyrae                  ║
+  ╚══════════════════════════════════════════════════╝
+*/
+
+  .box {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.box.placed {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+#room-input {
+    height: 2rem;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-top: 20px;
+    border-radius: 25px;
+    background-color: #aad8f6;
+    color: rgb(16, 9, 72);
+    border: none;
+    box-shadow: 0.3rem 0.8rem 0.8rem #0f1f3b;
+    
+
+}
+
+/*
+  ╔══════════════════════════════════════════════════╗
+  ║   Tic-Tac-Toe Multiplayer Game                   ║
+  ║   Author: Rahul Mondal                           ║
+  ║   Telegram: https://t.me/isyrae                  ║
+  ╚══════════════════════════════════════════════════╝
+*/
+
+
+::placeholder{
+    color: rgb(88, 96, 111);
+}
+#join-room {
+    /* height: 1.5rem; */
+    margin-left: 30px;
+    background-color: #aad8f6;
+    color: rgb(28, 43, 73);
+    font-weight: bold;
+    font-size: 0.8rem;
+
+    letter-spacing: 1px;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0.3rem 0.8rem 0.8rem #0f1f3b;
+}
+#join-room-text {
+    padding: 80px;
+    margin-top: 30px;
+    font-size: 1.2rem;
+}
+#waiting-msg {
+    padding: 40px;
+    margin-top: 60px;
+}
+
+
+/*
+  ╔══════════════════════════════════════════════════╗
+  ║   Tic-Tac-Toe Multiplayer Game                   ║
+  ║   Author: Rahul Mondal                           ║
+  ║   Telegram: https://t.me/isyrae                  ║
+  ╚══════════════════════════════════════════════════╝
+*/
+
+
